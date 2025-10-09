@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Poster-inspired palette: primary = poster red, secondary = dark slate, accent = bright red */
-            --primary: #c62828; /* poster red for headings and accents */
-            --secondary: #1f3a49; /* deep slate for header/footer and buttons */
-            --accent: #e74c3c; /* complementary bright red */
+            /* Updated color scheme */
+            --primary: #FF5A5A; /* coral/orange for logo & accents */
+            --secondary: #274653; /* preferred dark teal blue for navbar/background */
+            --secondary-2: #25404A; /* alternate darker teal for subtle use */
             --light: #f7f7f7;
-            --dark: #172022; /* very dark for subtle contrast */
+            --dark: #172022;
+            --text-light: #FFFFFF; /* Text (heading/main) */
+            --whatsapp: #25D366; /* WhatsApp green */
+            --call: #2CAAFE; /* Call blue */
+            --enquiry: #FF407B; /* Enquiry pink */
         }
         
         * {
@@ -39,8 +43,9 @@
         
         /* Header Styles */
         header {
+            /* navbar should be dark teal as requested */
             background-color: var(--secondary);
-            color: white;
+            color: var(--text-light);
             padding: 15px 0;
             position: sticky;
             top: 0;
@@ -59,19 +64,25 @@
             align-items: center;
         }
         
+        .logo img {
+            height: 50px;
+            width: auto;
+            /* multiple per-pixel drop-shadows create a crisp white outline/glow around the logo
+               (follows the non-transparent pixels of the PNG, avoiding a rectangular halo) */
+            -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,0.95)) drop-shadow(0 0 6px rgba(255,255,255,0.6));
+            filter: drop-shadow(0 0 2px rgba(255,255,255,0.95)) drop-shadow(0 0 6px rgba(255,255,255,0.6));
+        }
+
         .logo h1 {
             font-size: 1.5rem;
+            color: var(--text-light);
             margin-left: 10px;
-        }
-        
-        .logo-icon {
-            font-size: 1.8rem;
-            color: var(--primary);
         }
         
         .mobile-menu {
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--text-light);
         }
         
         nav ul {
@@ -97,7 +108,7 @@
         }
         
         nav ul li a {
-            color: white;
+            color: var(--text-light);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
@@ -107,7 +118,7 @@
         
         nav ul li a:hover {
             color: var(--primary);
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(255,255,255,0.08);
         }
         
         /* Poster Section */
@@ -132,11 +143,10 @@
         
         /* Hero Section */
         .hero {
-            /* Use a light translucent overlay so poster-red headings pop against the hero image */
-            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(37, 64, 74, 0.9), rgba(37, 64, 74, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            color: var(--dark);
+            color: var(--text-light);
             padding: 60px 0;
             text-align: center;
         }
@@ -144,14 +154,63 @@
         .hero h2 {
             font-size: 1.8rem;
             margin-bottom: 15px;
-            color: var(--primary);
+            color: var(--text-light);
         }
 
         .hero p {
             font-size: 1rem;
             max-width: 700px;
             margin: 0 auto 20px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Tagline strip under hero */
+        .tagline-strip {
+            background-color: var(--light);
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .taglines {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .taglines .tag {
+            font-weight: 700;
+            color: var(--secondary);
+            background: linear-gradient(90deg, rgba(255,90,90,0.06), rgba(255,90,90,0));
+            padding: 8px 14px;
+            border-radius: 20px;
+        }
+
+        /* Education quote block */
+        .education-quote {
+            padding: 40px 0;
+            background-color: #ffffff;
+            color: var(--dark);
+            text-align: center;
+        }
+
+        .education-quote h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.6rem;
+        }
+
+        .education-quote .lead {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
             color: rgba(23,34,34,0.85);
+        }
+
+        .education-quote blockquote {
+            font-style: italic;
+            color: rgba(23,34,34,0.75);
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         /* Contact Buttons */
@@ -181,7 +240,7 @@
         }
         
         .whatsapp-btn {
-            background-color: #25D366;
+            background-color: var(--whatsapp);
             color: white;
         }
         
@@ -191,24 +250,22 @@
         }
         
         .call-btn {
-            /* Phone button uses the deep slate to contrast with poster red */
-            background-color: var(--secondary);
+            background-color: var(--call);
             color: white;
         }
 
         .call-btn:hover {
-            background-color: #163138;
+            background-color: #1a8fe6;
             transform: translateY(-3px);
         }
         
         .enquiry-btn {
-            /* Make enquiry CTA align with poster red */
-            background-color: var(--primary);
+            background-color: var(--enquiry);
             color: white;
         }
 
         .enquiry-btn:hover {
-            background-color: #a11f1f;
+            background-color: #e6356c;
             transform: translateY(-3px);
         }
         
@@ -224,7 +281,7 @@
         
         .section-title h2 {
             font-size: 1.8rem;
-            color: var(--dark);
+            color: var(--primary);
             position: relative;
             display: inline-block;
             padding-bottom: 10px;
@@ -238,7 +295,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background-color: var(--primary);
+            background-color: var(--secondary);
         }
         
         /* About Section */
@@ -251,7 +308,7 @@
         .about-text h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: var(--secondary);
+            color: var(--primary);
         }
         
         .about-features {
@@ -265,7 +322,7 @@
         }
         
         .feature-icon {
-            background-color: var(--primary);
+            background-color: var(--secondary);
             color: white;
             width: 35px;
             height: 35px;
@@ -309,14 +366,14 @@
         
         .service-icon {
             font-size: 2rem;
-            color: var(--primary);
+            color: var(--secondary);
             margin-bottom: 15px;
         }
         
         .service-card h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
-            color: var(--secondary);
+            color: var(--primary);
         }
         
         /* Reviews Section */
@@ -342,7 +399,7 @@
         
         .reviewer {
             font-weight: 600;
-            color: var(--secondary);
+            color: var(--primary);
         }
         
         .rating {
@@ -351,8 +408,8 @@
         
         /* Contact Section */
         .contact {
-            background-color: var(--secondary);
-            color: white;
+            background-color: var(--primary);
+            color: var(--text-light);
         }
         
         .contact-content {
@@ -364,6 +421,7 @@
         .contact-info h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
+            color: var(--text-light);
         }
         
         .contact-detail {
@@ -375,7 +433,7 @@
         .contact-detail i {
             font-size: 1.1rem;
             margin-right: 12px;
-            color: var(--primary);
+            color: var(--secondary);
         }
         
         .contact-form input,
@@ -386,7 +444,7 @@
             border: none;
             border-radius: 5px;
             background-color: rgba(255,255,255,0.1);
-            color: white;
+            color: var(--text-light);
             font-size: 1rem;
         }
 
@@ -422,12 +480,12 @@
         }
 
         .contact-form select option:checked {
-            background: var(--primary);
+            background: var(--secondary);
             color: white;
         }
 
         .contact-form select option:hover {
-            background: rgba(198,40,40,0.06);
+            background: rgba(255,90,90,0.06);
             color: var(--dark);
         }
 
@@ -437,7 +495,7 @@
         }
         
         .contact-form button {
-            background-color: var(--primary);
+            background-color: var(--secondary);
             color: white;
             border: none;
             padding: 12px 30px;
@@ -450,13 +508,13 @@
         }
         
         .contact-form button:hover {
-            background-color: #2980b9;
+            background-color: #e74c3c;
         }
         
         /* Footer */
         footer {
             background-color: var(--dark);
-            color: white;
+            color: var(--text-light);
             padding: 40px 0 20px;
         }
         
@@ -481,7 +539,7 @@
             left: 0;
             width: 30px;
             height: 2px;
-            background-color: var(--primary);
+            background-color: var(--secondary);
         }
         
         .footer-column ul {
@@ -499,7 +557,7 @@
         }
         
         .footer-column ul li a:hover {
-            color: var(--primary);
+            color: var(--secondary);
         }
         
         .copyright {
@@ -539,12 +597,11 @@
         }
         
         .floating-whatsapp {
-            background-color: #25D366;
+            background-color: var(--whatsapp);
         }
         
         .floating-call {
-            /* Floating phone uses deep slate to balance the floating WhatsApp green */
-            background-color: var(--secondary);
+            background-color: var(--call);
         }
 
         /* Mirror phone icons so the handset faces the other way (as requested) */
@@ -630,7 +687,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-graduation-cap logo-icon"></i>
+                    <img src="https://i.ibb.co/xKL9n0hv/generated-image.png" alt="Bright Steps Logo">
                     <h1>Bright Steps</h1>
                 </div>
                 <div class="mobile-menu">
@@ -658,10 +715,32 @@
         </div>
     </section>
 
+    <!-- Tagline Strip -->
+    <section class="tagline-strip">
+        <div class="container">
+            <div class="taglines">
+                <div class="tag">Let us help you succeed!</div>
+                <div class="tag">Let's get learning!</div>
+                <div class="tag">Make learning easier!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Education Quote Block -->
+    <section class="education-quote">
+        <div class="container">
+            <h3>Why Education?</h3>
+            <p class="lead">Math is too hard — but with the right guidance it becomes possible. Let Bright Steps bridge the gap.</p>
+            <blockquote>
+                Education: The passport to a brighter future. Ignite minds with the power of education. Education is the most potent weapon to change the world. Education: The key to unlock your potential.
+            </blockquote>
+        </div>
+    </section>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h2>Expert Home Tutors for ICSE | CBSE | All Boards</h2>
+            <h2>Bright Steps Home Tutors for ICSE | CBSE | All Boards</h2>
             <p>Home Tuition | Coaching Classes | All Subjects | All Classes</p>
             
             <div class="contact-buttons">
