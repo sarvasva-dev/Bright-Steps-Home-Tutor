@@ -546,6 +546,13 @@
             /* Floating phone uses deep slate to balance the floating WhatsApp green */
             background-color: var(--secondary);
         }
+
+        /* Mirror phone icons so the handset faces the other way (as requested) */
+        .floating-call i,
+        .call-btn i {
+            display: inline-block;
+            transform: scaleX(-1);
+        }
         
         /* Tablet Styles */
         @media (min-width: 768px) {
