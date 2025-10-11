@@ -17,6 +17,8 @@
             --whatsapp: #25D366; /* WhatsApp green */
             --call: #2CAAFE; /* Call blue */
             --enquiry: #FF407B; /* Enquiry pink */
+            --gmail: #EA4335; /* Gmail red */
+            --instagram: #E4405F; /* Instagram pink */
         }
         
         * {
@@ -266,6 +268,27 @@
 
         .enquiry-btn:hover {
             background-color: #e6356c;
+            transform: translateY(-3px);
+        }
+        
+        /* New Gmail and Instagram buttons */
+        .gmail-btn {
+            background-color: var(--gmail);
+            color: white;
+        }
+
+        .gmail-btn:hover {
+            background-color: #d33434;
+            transform: translateY(-3px);
+        }
+        
+        .instagram-btn {
+            background-color: var(--instagram);
+            color: white;
+        }
+
+        .instagram-btn:hover {
+            background-color: #c13584;
             transform: translateY(-3px);
         }
         
@@ -603,6 +626,15 @@
         .floating-call {
             background-color: var(--call);
         }
+        
+        /* New floating Gmail and Instagram buttons */
+        .floating-gmail {
+            background-color: var(--gmail);
+        }
+        
+        .floating-instagram {
+            background-color: var(--instagram);
+        }
 
         /* Mirror phone icons so the handset faces the other way (as requested) */
         .floating-call i,
@@ -752,6 +784,12 @@
                 </a>
                 <a href="#contact" class="contact-btn enquiry-btn">
                     <i class="fas fa-envelope"></i> Enquire Now
+                </a>
+                <a href="mailto:brightstepshometutorscoachingc@gmail.com" class="contact-btn gmail-btn">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
+                <a href="https://www.instagram.com/brigh_tstepshometutor?igsh=OGt5NHp1ZHU0bjhm" class="contact-btn instagram-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i> Instagram
                 </a>
             </div>
         </div>
@@ -953,6 +991,12 @@
                         <a href="tel:9369751701" class="contact-btn call-btn" title="Call Bright Steps">
                             <i class="fas fa-phone-alt"></i> Call Now
                         </a>
+                        <a href="mailto:brightstepshometutorscoachingc@gmail.com" class="contact-btn gmail-btn" title="Email Bright Steps">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                        <a href="https://www.instagram.com/brigh_tstepshometutor?igsh=OGt5NHp1ZHU0bjhm" class="contact-btn instagram-btn" target="_blank" rel="noopener noreferrer" title="Instagram Bright Steps">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
                     </div>
                 </div>
                 <div class="contact-form">
@@ -1005,6 +1049,12 @@
                         <a href="tel:9369751701" class="contact-btn call-btn small" title="Call Bright Steps">
                             <i class="fas fa-phone-alt"></i>
                         </a>
+                        <a href="mailto:brightstepshometutorscoachingc@gmail.com" class="contact-btn gmail-btn small" title="Email Bright Steps">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.instagram.com/brigh_tstepshometutor?igsh=OGt5NHp1ZHU0bjhm" class="contact-btn instagram-btn small" target="_blank" rel="noopener noreferrer" title="Instagram Bright Steps">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1033,6 +1083,7 @@
                         <li><i class="fas fa-map-marker-alt"></i> Gopal Nagar, Kanpur</li>
                         <li><i class="fas fa-phone-alt"></i> 9369751701</li>
                         <li><i class="fas fa-phone-alt"></i> 9532514839</li>
+                        <li><i class="fas fa-envelope"></i> brightstepshometutorscoachingc@gmail.com</li>
                         <li><i class="fas fa-clock"></i> Open until 9:45 PM</li>
                     </ul>
                 </div>
@@ -1050,6 +1101,12 @@
         </a>
         <a href="tel:9369751701" class="floating-btn floating-call" title="Call Bright Steps">
             <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="mailto:brightstepshometutorscoachingc@gmail.com" class="floating-btn floating-gmail" title="Email Bright Steps">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.instagram.com/brigh_tstepshometutor?igsh=OGt5NHp1ZHU0bjhm" class="floating-btn floating-instagram" target="_blank" rel="noopener noreferrer" title="Instagram Bright Steps">
+            <i class="fab fa-instagram"></i>
         </a>
     </div>
 
