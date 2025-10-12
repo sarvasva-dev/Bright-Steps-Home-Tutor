@@ -64,7 +64,7 @@ As this is a static website, there is no API reference available. However, the w
 
 👤 Author
 ----------
-The Bright Steps website was designed and developed by [Your Name](https://github.com/sarvast).
+The Bright Steps website was designed and developed by [Sarvast](https://github.com/sarvast).
 
 📝 License
 ----------
